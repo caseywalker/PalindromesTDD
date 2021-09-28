@@ -8,5 +8,16 @@ namespace PalindromesTDD
 {
   class PalindromeChecker
   {
+
+    public bool CheckPalindrome(string palindrome)
+    {
+      var reversed = palindrome.Reverse().ToString();
+
+      if (reversed == palindrome)
+      {
+        return true;
+      }
+      else return false;
+    }
   }
 }
