@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace PalindromesTDD
 {
-  class PalindromeChecker
+  public class PalindromeChecker
   {
 
     public bool CheckPalindrome(string palindrome)
     {
-      var reversed = palindrome.Reverse().ToString();
 
-      if (reversed == palindrome)
-      {
-        return true;
-      }
-      else return false;
+      var palindromeArr = palindrome.ToCharArray();
+      var convertedLower = palindromeArr.Select(c => Char.ToLower(c));
+
+      var reversedPalindrome = palindromeArr.Reverse().ToArray();
+      var convertedLowerReverse = reversedPalindrome.Select(c => Char.ToLower(c));
+
+      return convertedLower.SequenceEqual(convertedLowerReverse);
     }
   }
 }
