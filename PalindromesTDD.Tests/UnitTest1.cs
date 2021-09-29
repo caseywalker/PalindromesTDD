@@ -19,5 +19,24 @@ namespace PalindromesTDD.Tests
       Assert.True(actualResult);
 
     }
+
+    [Theory]
+    [InlineData("Stats")]
+    [InlineData("Amore, Roma")]
+    [InlineData("No 'x' in Nixon")]
+    [InlineData("Was it a cat I saw?")]
+    [InlineData("O, a kak Uwakov lil vo kawu kakao!")]
+    [InlineData("Some men interpret nine memos")]
+    public void test_for_palindrome(string stringToTest)
+    {
+      //Arrange
+      var checker = new PalindromeChecker();
+
+      //Act
+      bool actualResult = checker.CheckPalindrome(stringToTest);
+
+      //Assert
+      Assert.True(actualResult);
+    }
   }
 }
